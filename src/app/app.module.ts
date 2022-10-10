@@ -18,7 +18,8 @@ import { MenuComponent } from './components/commons/menu/menu.component';
 import { FooterComponent } from './components/commons/footer/footer.component';
 import { DistributionComponent } from './components/admin/distribution/distribution.component';
 import { ProductsComponent } from './components/admin/products/products.component';
-
+import { VentaComponent } from './components/admin/venta/venta.component';
+import { ProductionComponent } from './components/admin/production/production.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { ProductsComponent } from './components/admin/products/products.componen
     MenuComponent,
     FooterComponent,
     DistributionComponent,
-    ProductsComponent
+    ProductsComponent,
+    VentaComponent,
+    ProductionComponent
   ],
   imports: [
     ModalModule.forRoot(),
