@@ -1,16 +1,17 @@
-import { Component, TemplateRef, OnInit} from '@angular/core';
+import { Component, Input , TemplateRef, OnInit} from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Product } from 'src/app/model/product.model';
 
 @Component({
-  selector: 'app-production',
-  templateUrl: './production.component.html',
-  styleUrls: ['./production.component.scss']
+  selector: 'app-galeria-pedidos',
+  templateUrl: './galeria-pedidos.component.html',
+  styleUrls: ['./galeria-pedidos.component.scss']
 })
-export class ProductionComponent implements OnInit {
+export class GaleriaPedidosComponent implements OnInit {
 
-
+  @Input() products: Product[] = [];
   constructor(public modalService: BsModalService){}
+
   ngOnInit(): void {
   }
   modalRef?: BsModalRef;
@@ -45,41 +46,24 @@ export class ProductionComponent implements OnInit {
 
   title = 'angular-tarea';
 
-  products: Product[] = [{
-    name: "parquet",
-    price: 28,
-    image: "https://media.istockphoto.com/photos/sample-of-wood-chipboard-wooden-laminate-veneer-material-for-interior-picture-id1135678299?b=1&k=20&m=1135678299&s=612x612&w=0&h=JVmRpRls_0Pq9f5GT2EPtmWXbzlLMXGlKX6L4YOuKU8=",
-    description: "Paquete de Parquet  x24 unidades",
-    porcentaje: "100%",
-    estado: "Entregado"
-  },
-  {
-    name: "parquet",
-    price: 28,
-    image: "https://media.istockphoto.com/photos/sample-of-wood-chipboard-wooden-laminate-veneer-material-for-interior-picture-id1135678299?b=1&k=20&m=1135678299&s=612x612&w=0&h=JVmRpRls_0Pq9f5GT2EPtmWXbzlLMXGlKX6L4YOuKU8=",
-    description: "Paquete de Parquet  x24 unidades",
-    porcentaje: "100%",
-    estado: "Entregado"
-  }
-];
-actComprobante(): void{
+
+  actComprobante(): void{
     
-  const replace: any ={
-    name: this.d_nombre,
-    price: 28,
-    image: this.d_ruta,
-    description: this.d_descripcion,
-    porcentaje: this.d_porcentaje,
-    estado: this.d_estado
+    const replace: any ={
+      name: this.d_nombre,
+      price: 28,
+      image: this.d_ruta,
+      description: this.d_descripcion,
+      porcentaje: this.d_porcentaje,
+      estado: this.d_estado
+    }
+    this.products.splice(this.posicionActualizar,1,replace);
+    this.d_descripcion="";
+    this.d_ruta="";
+    this.d_nombre="";
+    this.d_porcentaje="";
+    this.d_estado="";
+    console.log(this.d_descripcion)
+    console.log(this.products);
   }
-  this.products.splice(this.posicionActualizar,1,replace);
-  this.d_descripcion="";
-  this.d_ruta="";
-  this.d_nombre="";
-  this.d_porcentaje="";
-  this.d_estado="";
-  console.log(this.d_descripcion)
-  console.log(this.products);
-}
-  
 }

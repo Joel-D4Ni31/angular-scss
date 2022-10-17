@@ -14,12 +14,14 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 //imports of project
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './components/commons/menu/menu.component';
-import { FooterComponent } from './components/commons/footer/footer.component';
-import { DistributionComponent } from './components/admin/distribution/distribution.component';
-import { ProductsComponent } from './components/admin/products/products.component';
-import { VentaComponent } from './components/admin/venta/venta.component';
-import { ProductionComponent } from './components/admin/production/production.component';
+import { MenuComponent } from './commons/menu/menu.component';
+import { FooterComponent } from './commons/footer/footer.component';
+import { DistributionComponent } from './pages/admin/distribution/distribution.component';
+import { ProductsComponent } from './pages/admin/products/products.component';
+import { VentaComponent } from './pages/admin/venta/venta.component';
+import { ProductionComponent } from './pages/admin/production/production.component';
+import { HomeComponent } from './pages/admin/home/home.component';
+import { GaleriaPedidosComponent } from './components/galeria-pedidos/galeria-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ProductionComponent } from './components/admin/production/production.co
     DistributionComponent,
     ProductsComponent,
     VentaComponent,
-    ProductionComponent
+    ProductionComponent,
+    HomeComponent,
+    GaleriaPedidosComponent
   ],
   imports: [
     ModalModule.forRoot(),
