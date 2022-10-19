@@ -22,6 +22,7 @@ import { VentaComponent } from './pages/admin/venta/venta.component';
 import { ProductionComponent } from './pages/admin/production/production.component';
 import { HomeComponent } from './pages/admin/home/home.component';
 import { GaleriaPedidosComponent } from './components/galeria-pedidos/galeria-pedidos.component';
+import { ListaProduccionComponent } from './components/lista-produccion/lista-produccion.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { GaleriaPedidosComponent } from './components/galeria-pedidos/galeria-pe
     VentaComponent,
     ProductionComponent,
     HomeComponent,
-    GaleriaPedidosComponent
+    GaleriaPedidosComponent,
+    ListaProduccionComponent
   ],
   imports: [
     ModalModule.forRoot(),

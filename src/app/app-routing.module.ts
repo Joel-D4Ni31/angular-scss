@@ -6,11 +6,13 @@ import { VentaComponent } from './pages/admin/venta/venta.component';
 import { ProductsComponent } from './pages/admin/products/products.component';
 import { HomeComponent } from './pages/admin/home/home.component';
 import { GaleriaPedidosComponent } from './components/galeria-pedidos/galeria-pedidos.component';
+import { ListaProduccionComponent } from './components/lista-produccion/lista-produccion.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
+  { path: 'lista-produccion', component: ListaProduccionComponent },
   { path: 'galeria-pedidos', component: GaleriaPedidosComponent },
   { path: 'distribution', component: DistributionComponent },
   { path: 'production', component: ProductionComponent },
