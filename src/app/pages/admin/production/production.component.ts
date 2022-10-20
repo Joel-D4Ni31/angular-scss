@@ -1,6 +1,7 @@
 import { Component, TemplateRef, OnInit} from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Product } from 'src/app/model/product.model';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-production',
@@ -9,29 +10,14 @@ import { Product } from 'src/app/model/product.model';
 })
 export class ProductionComponent implements OnInit {
 
-
-  constructor(){}
+  products: Product[] = [
+  ];
+  constructor(private storeServices: StoreService){
+    this.products = storeServices.products;
+  }
   ngOnInit(): void {
   }
- 
-
-  products: Product[] = [{
-    name: "parquet",
-    price: 28,
-    image: "/assets/img/parquet.jpg",
-    description: "Paquete de Parquet  x24 unidades",
-    porcentaje: "100%",
-    estado: "Entregado"
-  },
-  {
-    name: "Socalo",
-    price: 28,
-    image: "/assets/img/zócalo.jpg",
-    description: "Paquete de Socalos  x12 unidades",
-    porcentaje: "100%",
-    estado: "Entregado"
-  }
-];
+  
   
 
 }

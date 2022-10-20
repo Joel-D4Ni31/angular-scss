@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/model/product.model';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
@@ -18,14 +18,20 @@ export class ListaProduccionComponent implements OnInit {
   posicionActualizar:number = 0;
   posicionVer:number =0;
  
-
   @Input() production: Product= {
-  name: "",
-  price: 0,
-  image: "",
-  description: "",
-  porcentaje: "",
-  estado: "",
+    id: "",
+    name: "",
+    price: 0,
+    image: "",
+    description: "",
+    porcentaje: "",
+    estado: "",
   };
+
+  @Output() pressSalvar = new EventEmitter();
+  salvarVenta(id: string): void{
+    this.pressSalvar.emit(id); 
+  }
+
   
 }

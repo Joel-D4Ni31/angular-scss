@@ -18,6 +18,7 @@ export class DistributionComponent implements OnInit {
   p_estado: string ="";
 
   products: Product[] = [{
+    id: "",
     name: "parquet",
     price: 2,
     image: "./img/parquet.jpg",
@@ -28,6 +29,7 @@ export class DistributionComponent implements OnInit {
   
   addProduct(): void{
     const newProduct ={
+      id: "",
       name: this.p_producto,
       price: 0,
       image: this.p_imagen,

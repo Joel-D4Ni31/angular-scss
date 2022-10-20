@@ -1,6 +1,7 @@
-import { Component, Input , TemplateRef, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, Input , TemplateRef, OnInit} from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Product } from 'src/app/model/product.model';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-galeria-pedidos',
@@ -10,16 +11,21 @@ import { Product } from 'src/app/model/product.model';
 export class GaleriaPedidosComponent implements OnInit {
 
   @Input() elementos: Product[] = [];
-  salvados: number = 0;
-  constructor(public modalService: BsModalService){};
+  //salvados: number = 0;
+  salvados : Product[] = [];
+  constructor(public modalService: BsModalService, private storeService: StoreService){
+    this.salvados = storeService.salvados;
+  };
 
   ngOnInit(): void {
   }
   
-  @Output() salvar = new EventEmitter();
-  salvarVenta(i: number): void{
-    this.salvar.emit(); 
-  }
+salvarVenta(id: string): void{
+  //this.salvados++;
+ //this.salvados.push(id);
+  this.storeService.agregarSalvado(this.elementos[parseInt(id.charAt(3))]);
+  console.log(this.salvados)
+}
   modalRef?: BsModalRef;
   posicionActualizar:number = 0;
   posicionVer:number =0;

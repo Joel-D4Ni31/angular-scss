@@ -1,14 +1,9 @@
-
-    <!-- <td class="centrado">{{ i }}</td> -->
-    <td class="centrado">{{ production.description }}</td>
-    <td class="centrado">
-        <img [src]="production.image" height="50px" alt="image">
-        {{ production.name }}
-    </td>
-    <td class="centrado">{{production.porcentaje}}</td>
-    <td class="centrado">{{production.estado}}</td>
-    <!-- <td class="centrado ">
-        <button  (click)="openModal1(template1,i)" class="btn btn-primary">Ver</button>
-        <button type="button" class="btn btn-success" (click)="openModal(template,i)">Actualizar</button>
-        <button type="button" class="btn btn-danger" (click)="salvarVenta(i)">Salvar</button>    
-    </td> -->
+    <div class=".spacioBott">
+        <img [src]="production.image" class="img-thumbnail" alt="image">
+        <div><b>Descripción: </b>  <i>{{ production.description }}</i></div>
+        <div><b>Producto: </b> <i>{{ production.name }}</i></div>
+        <div><b>%Avance: </b> <i>{{production.porcentaje}}</i></div>
+        <div><b>Estado: </b> <i>{{production.estado}}</i></div>
+        <button class="btn-btn-secondary" (click)="salvarVenta(production.id)">Salva</button>
+    </div>
+ 

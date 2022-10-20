@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import{BsModalRef,BsModalService}from'ngx-bootstrap/modal';
 import { Product } from 'src/app/model/product.model';
+import { StoreService } from 'src/app/services/store.service';
 @Component({
   selector: 'app-venta',
   templateUrl: './venta.component.html',
@@ -11,7 +12,24 @@ export class VentaComponent implements OnInit {
   }
 
   modalRef?: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+  salvados: Product[] = [
+  ];
+  constructor(private modalService: BsModalService, private storeService: StoreService) {
+    for (const property in this.salvados) {
+      console.log(property);
+      const newProduct ={
+        id: property[0],
+        name: property[1],
+        price: parseInt(property[2]),
+        image: property[3],
+        estado: property[4],
+        description: property[5],
+        porcentaje: property[6],
+      }
+      this.products.push(newProduct);
+    } 
+    
+  }
   posicionActualizar:number = 0;
   posicionVer:number =0;
   open(template: TemplateRef<any>,position :number) {
@@ -40,6 +58,7 @@ export class VentaComponent implements OnInit {
   d_estado: string ="";
   d_price: number = 0;
   products: Product[] = [{
+    id: "",
     name: "",
     price: 280,
     image: "https://static6.depositphotos.com/1032712/597/i/450/depositphotos_5970213-stock-photo-wood-floor.jpg",
@@ -48,6 +67,7 @@ export class VentaComponent implements OnInit {
     estado: "Sala para solteros"
   },
   {
+    id: "",
     name: "",
     price: 345,
     image: "https://static6.depositphotos.com/1032712/597/i/450/depositphotos_5970213-stock-photo-wood-floor.jpg",
@@ -60,6 +80,7 @@ export class VentaComponent implements OnInit {
   actComprobante(): void{
     
     const replace: any ={
+      id: "",
       name: this.d_nombre,
       price: 689,
       image: this.d_ruta,

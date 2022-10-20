@@ -45,6 +45,7 @@ export class ProductsComponent implements OnInit {
  
 
   products: Product[] = [{
+    id: "",
     name: "parquet",
     price: 2,
     image: "https://media.istockphoto.com/photos/sample-of-wood-chipboard-wooden-laminate-veneer-material-for-interior-picture-id1135678299?b=1&k=20&m=1135678299&s=612x612&w=0&h=JVmRpRls_0Pq9f5GT2EPtmWXbzlLMXGlKX6L4YOuKU8=",
@@ -55,6 +56,7 @@ export class ProductsComponent implements OnInit {
   
   addProducto(): void{
     const newProduct ={
+      id: "",
       name: this.d_nombre,
       price: this.d_Precio,
       image: "",
@@ -75,6 +77,7 @@ export class ProductsComponent implements OnInit {
     
     const replace: any ={
       name: this.d_nombre,
+      id: "",
       price: this.d_Precio,
       image: "",
       estado: this.d_Stoke,
