@@ -7,10 +7,16 @@ import { ProductsComponent } from './pages/admin/products/products.component';
 import { HomeComponent } from './pages/admin/home/home.component';
 import { GaleriaPedidosComponent } from './components/galeria-pedidos/galeria-pedidos.component';
 import { ListaProduccionComponent } from './components/lista-produccion/lista-produccion.component';
+import { ShoppingCartComponent } from './pages/user/shopping-cart/shopping-cart.component';
+import { PedidoComponent } from './pages/user/pedido/pedido.component';
+import { LoginComponent } from './pages/login/login.component';
+
+
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'lista-produccion', component: ListaProduccionComponent },
   { path: 'galeria-pedidos', component: GaleriaPedidosComponent },
@@ -18,6 +24,8 @@ const routes: Routes = [
   { path: 'production', component: ProductionComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'venta', component: VentaComponent },
+  { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'pedido', component: PedidoComponent },
 ];
 
 @NgModule({

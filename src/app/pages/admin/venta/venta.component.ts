@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import{BsModalRef,BsModalService}from'ngx-bootstrap/modal';
+import { Category } from 'src/app/model/category.model';
 import { Product } from 'src/app/model/product.model';
 import { StoreService } from 'src/app/services/store.service';
 @Component({
@@ -20,11 +21,11 @@ export class VentaComponent implements OnInit {
       const newProduct ={
         id: property[0],
         name: property[1],
-        price: parseInt(property[2]),
-        image: property[3],
-        estado: property[4],
-        description: property[5],
-        porcentaje: property[6],
+        description: property[2],
+        price: parseInt(property[3]),
+        stock: parseInt(property[4]),
+        image: property[5],
+        categoria: this.category[0],
       }
       this.products.push(newProduct);
     } 
@@ -35,67 +36,80 @@ export class VentaComponent implements OnInit {
   open(template: TemplateRef<any>,position :number) {
     this.modalRef = this.modalService.show(template);
     this.posicionActualizar=position;
-    this.d_descripcion=this.products[this.posicionActualizar].description;
-    this.d_ruta=this.products[this.posicionActualizar].image;
     this.d_nombre=this.products[this.posicionActualizar].name;
-    this.d_porcentaje=this.products[this.posicionActualizar].porcentaje;
-    this.d_estado=this.products[this.posicionActualizar].estado;
+    this.d_descripcionn=this.products[this.posicionActualizar].description;
+    this.d_Stoke=this.products[this.posicionActualizar].stock;
+    this.d_Precio=this.products[this.posicionActualizar].price;
   }
   open1(template1: TemplateRef<any>,position :number) {
     this.modalRef = this.modalService.show(template1);
     this.posicionVer=position;
-    this.d_descripcion=this.products[this.posicionVer].description;
-    this.d_ruta=this.products[this.posicionVer].image;
+    this.d_descripcionn=this.products[this.posicionVer].description;
     this.d_nombre=this.products[this.posicionVer].name;
-    this.d_porcentaje=this.products[this.posicionVer].porcentaje;
-    this.d_estado=this.products[this.posicionVer].estado;
-    this.d_price=this.products[this.posicionVer].price;
+    this.d_Stoke=this.products[this.posicionVer].stock;
+    this.d_Precio=this.products[this.posicionVer].price;
+  
   }
-  d_descripcion: string="";
-  d_ruta: string ="";
   d_nombre: string ="";
-  d_porcentaje: string ="";
-  d_estado: string ="";
-  d_price: number = 0;
-  products: Product[] = [{
-    id: "",
-    name: "",
-    price: 280,
-    image: "https://static6.depositphotos.com/1032712/597/i/450/depositphotos_5970213-stock-photo-wood-floor.jpg",
-    description: "17892322623",
-    porcentaje: "Sala 7 cuerpos",
-    estado: "Sala para solteros"
+  d_descripcionn: string="";
+  d_Stoke?: number = 0;
+  d_Precio: number = 0;
+ 
+  category: Category[] = [{
+    id: "C001",
+    name: "Piso",
+    description: "Insumo para usar en pisos"
   },
   {
-    id: "",
-    name: "",
-    price: 345,
-    image: "https://static6.depositphotos.com/1032712/597/i/450/depositphotos_5970213-stock-photo-wood-floor.jpg",
-    description: "1245652826",
-    porcentaje: "acabdos en madera-lamina",
-    estado: "Juego de sala perfecta para 6"
+    id: "C002",
+    name: "Pared",
+    description: "Insumo para usar en paredes"
+  },
+  {
+    id: "C003",
+    name: "Complementario",
+    description: "Insumo para usar de complemento"
   }
 ];
 
+products: Product[] = [{
+  id: "P001",
+  name: "parquet",
+  description: "Paquete de Parquet  x24 unidades",
+  price: 28,
+  stock: 10,
+  image: "/assets/img/parquet.jpg",
+  categoria: this.category[0],
+},
+{
+  id: "P002",
+  name: "Socalo",
+  description: "Paquete de Socalos  x12 unidades",
+  price: 28,
+  stock: 10,
+  image: "/assets/img/zócalo.jpg",
+  categoria: this.category[0],
+  
+  
+}
+];
+  
   actComprobante(): void{
     
     const replace: any ={
       id: "",
       name: this.d_nombre,
-      price: 689,
-      image: this.d_ruta,
-      description: this.d_descripcion,
-      porcentaje: this.d_porcentaje,
-      estado: this.d_estado
+      description: this.d_descripcionn,
+      price: this.d_Precio,
+      stock: this.d_Stoke,
+      image: "",
+      categoria: this.category[0],
     }
     this.products.splice(this.posicionActualizar,1,replace);
-    this.d_descripcion="";
-    this.d_ruta="";
-    this.d_nombre="";
-    this.d_porcentaje="";
-    this.d_estado="";
-    console.log(this.d_descripcion)
-    console.log(this.products);
+    this.d_nombre ="";
+    this.d_descripcionn="";
+    this.d_Stoke= 0;
+    this.d_Precio= 0;
   }
   eliminarProduct(posicion: number): void {
       this.products.splice(posicion, 1);
