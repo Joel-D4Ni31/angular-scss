@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { Category } from 'src/app/model/category.model';
 import { DetailSale } from 'src/app/model/detalleVenta.model';
@@ -15,9 +15,10 @@ export class GalleryProductsComponent implements OnInit {
 
   @Input() elementos: Product[] = [];
 
-  elementCart: DetailSale = this.shopCartService.newElementCart();
+  //elementCart: DetailSale = this.shopCartService.newElementCart();
   seleccionados : Product[] = [];
   elementsCart: DetailSale[] = []; 
+  @Output() elementsCart2: DetailSale[] = this.elementsCart; 
 
   constructor(public modalService: BsModalService, private storeService: StoreService, private shopCartService: ShopCartService){
     this.seleccionados = storeService.seleccionados;
@@ -27,9 +28,10 @@ export class GalleryProductsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  selectProduct(id: string): void{
-    this.shopCartService.addElementCart(this.elementos[this.elementos.length-1],1);
-    this.storeService.agregarSeleccionado(this.elementos[this.elementos.length-1]);
+  selectProduct(pro :Product): void{
+    this.shopCartService.addElementCart(pro,1);
+    console.log(this.elementsCart)
+    this.storeService.agregarSeleccionado(pro);
     console.log(this.seleccionados)
   }
 

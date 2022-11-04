@@ -31,8 +31,8 @@ export class CardProductComponent implements OnInit {
   };
 
   @Output() pressSelect = new EventEmitter();
-  selectProduct(id: string): void{
-    this.pressSelect.emit(id); 
+  selectProduct(pro : Product): void{
+    this.pressSelect.emit(pro); 
   }
 
 }

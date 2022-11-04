@@ -8,7 +8,7 @@
         <p><strong>Precio: </strong>{{ product.price }}</p> 
         <p><strong>Stock:</strong> {{ product.stock }}</p>
         <p *ngIf="product.categoria"><strong>Categoria:</strong> {{ product.categoria.name}}</p>  
-    <button class="btn-btn-secondary" (click)="selectProduct(product.id)">
+    <button class="btn-btn-secondary" (click)="selectProduct(product)">
       Agregar a Carrito
     </button>
   </div>

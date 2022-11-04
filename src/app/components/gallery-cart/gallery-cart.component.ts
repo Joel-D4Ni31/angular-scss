@@ -20,10 +20,16 @@ export class GalleryCartComponent implements OnInit {
 
   constructor(public modalService: BsModalService, private shopCartService: ShopCartService){
     this.elementsCart = shopCartService.carrito;
+    console.log("asd", this.elementsCart);
   };
+
+  
+
   ngOnInit(): void {
     this.elementsCart.forEach(item =>{
-      this.cartTotal += (item.cantidad*item.price)
+      this.cartTotal += (item.cantidad*item.price);
+      console.log("asd", this.elementsCart);
+
     })
   }
 
