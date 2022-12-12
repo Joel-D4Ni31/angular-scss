@@ -6,6 +6,6 @@ export interface DetailSale{
     cantidad: number;
     price: number;
     subtotal: number;
-    producto: Product;
-    Venta?: Sale;
+    //producto: Product;
+    //Venta?: Sale;
 }

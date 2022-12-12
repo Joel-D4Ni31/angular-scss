@@ -18,7 +18,7 @@ export class ListaProduccionComponent implements OnInit {
   modalRef?: BsModalRef;
   posicionActualizar:number = 0;
   posicionVer:number =0;
- 
+
   @Input() categoryP: Category= {
     id: "",
     name: "",
@@ -27,17 +27,15 @@ export class ListaProduccionComponent implements OnInit {
 
   @Input() production: Product= {
     id: "",
-    name: "",
-    description: "",
-    price: 0,
-    stock: 0,
-    image: "",
+    nombre: "",
+    precio: 0,
+
   };
 
   @Output() pressSalvar = new EventEmitter();
   salvarVenta(id: string): void{
-    this.pressSalvar.emit(id); 
+    this.pressSalvar.emit(id);
   }
 
-  
+
 }

@@ -27,23 +27,23 @@ export class StoreService {
 ];
   products: Product[] = [{
     id: "P001",
-    name: "parquet",
-    description: "Paquete de Parquet  x24 unidades",
-    price: 28,
-    stock: 10,
-    image: "/assets/img/parquet.jpg",
-    categoria: this.category[0],
+    nombre: "parquet",
+    //description: "Paquete de Parquet  x24 unidades",
+    precio: 28,
+    // stock: 10,
+    // image: "/assets/img/parquet.jpg",
+    // categoria: this.category[0],
   },
   {
     id: "P002",
-    name: "Socalo",
-    description: "Paquete de Socalos  x12 unidades",
-    price: 28,
-    stock: 10,
-    image: "/assets/img/zócalo.jpg",
-    categoria: this.category[0],
-    
-    
+    nombre: "Socalo",
+    //description: "Paquete de Socalos  x12 unidades",
+    precio: 28,
+    // stock: 10,
+    // image: "/assets/img/zócalo.jpg",
+    // categoria: this.category[0],
+
+
   }
 ];
 salvados: Product[] = [];
@@ -54,5 +54,5 @@ seleccionados: Product[] = [];
 agregarSeleccionado(elemento: Product): void{
   this.seleccionados.push(elemento);
 }
-  
+
 }

@@ -14,8 +14,8 @@
           <tr>
             <th class="centrado">Id</th>
             <th class="centrado">Producto</th>
-            <th class="centrado">Detalles</th>
-            <th class="centrado">Stoke</th>
+            <!-- <th class="centrado">Detalles</th>
+            <th class="centrado">Stoke</th> -->
             <th class="centrado">Precio</th>
             <th class="centrado">Acción</th>
           </tr>
@@ -24,10 +24,10 @@
           <tr></tr>
           <tr *ngFor="let pro of products; index as i">
             <td class="centrado">{{ i }}</td>
-            <td class="centrado">{{ pro.name }}</td>
-            <td class="centrado">{{ pro.description }}</td>
-            <td class="centrado">{{ pro.stock }}</td>
-            <td class="centrado">{{ pro.price }}</td>
+            <td class="centrado">{{ pro.nombre }}</td>
+            <!-- <td class="centrado">{{ pro.description }}</td>
+            <td class="centrado">{{ pro.stock }}</td> -->
+            <td class="centrado">{{ pro.precio }}</td>
             <td class="centrado">
               <button
                 (click)="openModal1(template1, i)"

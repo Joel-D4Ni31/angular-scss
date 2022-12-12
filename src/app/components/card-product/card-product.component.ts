@@ -13,26 +13,16 @@ export class CardProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  @Input() categoryP: Category= {
-    id: "",
-    name: "",
-    description: ""
-  };
 
   @Input() product: Product= {
     id: "",
-    name: "",
-    description: "",
-    price: 0,
-    stock: 0,
-    image: "",
-    categoria: this.categoryP,
-
+    nombre: "",
+    precio: 0,
   };
 
   @Output() pressSelect = new EventEmitter();
   selectProduct(pro : Product): void{
-    this.pressSelect.emit(pro); 
+    this.pressSelect.emit(pro);
   }
 
 }

@@ -7,6 +7,6 @@ export interface Sale{
     delivery: string;
     dateDelivery: Date;
     dateSale: Date;
-    client?: Client;
-    pago?: Payment;
+    // client?: Client;
+    // pago?: Payment;
 }

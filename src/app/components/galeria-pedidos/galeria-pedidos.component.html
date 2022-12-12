@@ -43,7 +43,7 @@
         <label for="detalle" class="form-label title-description"
           >Detalles de pedido</label
         >
-        <input
+        <!-- <input
           id="input1"
           name="input1"
           type="text"
@@ -52,21 +52,21 @@
           class="form-control"
           id="detalle"
           placeholder="Detalle"
-        />
+        /> -->
       </div>
       <div class="mb-3">
         <label for="ruta" class="form-label title-description">Imagen</label>
-        <input
+        <!-- <input
           id="input2"
           name="input2"
           type="text"
           required
-          [(ngModel)]="d_descripcionn"
+          [(ngModel)]="d_imagen"
           class="form-control"
           id="ruta"
           placeholder="Ruta de la Imagen"
           autofocus
-        />
+        /> -->
       </div>
       <div class="mb-3">
         <label for="nombre" class="form-label title-description"
@@ -87,7 +87,7 @@
         <label for="porcentaje" class="form-label title-description"
           >Porcentaje de proceso</label
         >
-        <input
+        <!-- <input
           id="input4"
           name="input4"
           type="text"
@@ -96,11 +96,11 @@
           class="form-control"
           id="porcentaje"
           placeholder="Porcentaje"
-        />
+        /> -->
       </div>
       <div class="mb-3">
         <label for="estado" class="form-label title-description">Estado</label>
-        <input
+        <!-- <input
           id="input4"
           name="input4"
           type="text"
@@ -109,7 +109,7 @@
           class="form-control"
           id="estado"
           placeholder="Porcentaje"
-        />
+        /> -->
       </div>
     </form>
     <button
@@ -142,9 +142,9 @@
   <div class="modal-body overflow-auto">
     <form id="form2" class="overflow-auto" name="form2" #form="ngForm">
       <h3 class="title-description">Detalles de venta</h3>
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label class="form-label title-description">{{ d_descripcionn }}</label>
-      </div>
+      </div> -->
       <div class="mb-3">
         <img [src]="d_nombre" height="100px" alt="image" />
       </div>
@@ -157,9 +157,9 @@
       <div class="mb-3">
         <label class="form-label title-description">{{ d_nombre }}</label>
       </div>
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label class="form-label title-description">{{ d_Stoke }}</label>
-      </div>
+      </div> -->
     </form>
   </div>
   <button

@@ -2,8 +2,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule} from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //imports de terceros
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -63,6 +63,7 @@ import { GalleryCartComponent } from './components/gallery-cart/gallery-cart.com
     BrowserAnimationsModule,
     NgxNavbarModule,
     FormsModule,
+    HttpClientModule,
     BsDropdownModule.forRoot(),
     AppRoutingModule,
     CollapseModule.forRoot(),

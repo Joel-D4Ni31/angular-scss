@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DetailSale } from 'src/app/model/detalleVenta.model';
 import { Product } from 'src/app/model/product.model';
 import { ShopCartService } from 'src/app/services/shop-cart.service';
-import { StoreService } from 'src/app/services/store.service';
+import { ProductService } from 'src/app/services/product.service';
 
 
 @Component({
@@ -16,11 +16,15 @@ export class ShoppingCartComponent implements OnInit {
   ];
   itemsCart: DetailSale[] = [
   ];
-  constructor(private storeServices: StoreService, private shopCartService: ShopCartService){
-    this.products = storeServices.products;
-    this.itemsCart = shopCartService.carrito;
+  constructor(private productServices: ProductService, private shopCartService: ShopCartService){
+
+    // this.itemsCart = shopCartService.carrito;
   }
   ngOnInit(): void {
+    this.productServices.getAllProducts()
+      .subscribe(data => {
+        this.products = data;
+      });
   }
 
 }

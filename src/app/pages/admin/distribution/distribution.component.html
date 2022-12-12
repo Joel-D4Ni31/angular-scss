@@ -61,12 +61,12 @@
         <tbody>
           <tr *ngFor="let pro of products; index as i">
             <td class="centrado">{{ i }}</td>
-            <td class="centrado">{{ pro.name }}</td>
+            <td class="centrado">{{ pro.nombre }}</td>
             <td class="centrado">
-              <img [src]="pro.image" height="50px" alt="image" />
-              {{ pro.name }}
+              <!-- <img [src]="pro.image" height="50px" alt="image" /> -->
+              {{ pro.precio }}
             </td>
-            <td class="centrado">{{ pro.stock }}</td>
+            <!-- <td class="centrado">{{ pro.stock }}</td> -->
             <td class="centrado">
               <button class="btn btn-primary" (click)="deleteProduct(i)">
                 Eliminar

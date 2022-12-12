@@ -20,41 +20,41 @@ export class VentaComponent implements OnInit {
       console.log(property);
       const newProduct ={
         id: property[0],
-        name: property[1],
-        description: property[2],
-        price: parseInt(property[3]),
-        stock: parseInt(property[4]),
-        image: property[5],
-        categoria: this.category[0],
+        nombre: property[1],
+        // description: property[2],
+        precio: parseInt(property[3]),
+        // stock: parseInt(property[4]),
+        // image: property[5],
+        // categoria: this.category[0],
       }
       this.products.push(newProduct);
-    } 
-    
+    }
+
   }
   posicionActualizar:number = 0;
   posicionVer:number =0;
   open(template: TemplateRef<any>,position :number) {
     this.modalRef = this.modalService.show(template);
     this.posicionActualizar=position;
-    this.d_nombre=this.products[this.posicionActualizar].name;
-    this.d_descripcionn=this.products[this.posicionActualizar].description;
-    this.d_Stoke=this.products[this.posicionActualizar].stock;
-    this.d_Precio=this.products[this.posicionActualizar].price;
+    this.d_nombre=this.products[this.posicionActualizar].nombre;
+    // this.d_descripcionn=this.products[this.posicionActualizar].description;
+    // this.d_Stoke=this.products[this.posicionActualizar].stock;
+    this.d_Precio=this.products[this.posicionActualizar].precio;
   }
   open1(template1: TemplateRef<any>,position :number) {
     this.modalRef = this.modalService.show(template1);
     this.posicionVer=position;
-    this.d_descripcionn=this.products[this.posicionVer].description;
-    this.d_nombre=this.products[this.posicionVer].name;
-    this.d_Stoke=this.products[this.posicionVer].stock;
-    this.d_Precio=this.products[this.posicionVer].price;
-  
+    //this.d_descripcionn=this.products[this.posicionVer].description;
+    this.d_nombre=this.products[this.posicionVer].nombre;
+   // this.d_Stoke=this.products[this.posicionVer].stock;
+    this.d_Precio=this.products[this.posicionVer].precio;
+
   }
   d_nombre: string ="";
   d_descripcionn: string="";
   d_Stoke?: number = 0;
   d_Precio: number = 0;
- 
+
   category: Category[] = [{
     id: "C001",
     name: "Piso",
@@ -74,36 +74,36 @@ export class VentaComponent implements OnInit {
 
 products: Product[] = [{
   id: "P001",
-  name: "parquet",
-  description: "Paquete de Parquet  x24 unidades",
-  price: 28,
-  stock: 10,
-  image: "/assets/img/parquet.jpg",
-  categoria: this.category[0],
+  nombre: "parquet",
+  //description: "Paquete de Parquet  x24 unidades",
+  precio: 28,
+  // stock: 10,
+  // image: "/assets/img/parquet.jpg",
+  // categoria: this.category[0],
 },
 {
   id: "P002",
-  name: "Socalo",
-  description: "Paquete de Socalos  x12 unidades",
-  price: 28,
-  stock: 10,
-  image: "/assets/img/zócalo.jpg",
-  categoria: this.category[0],
-  
-  
+  nombre: "Socalo",
+ // description: "Paquete de Socalos  x12 unidades",
+  precio: 28,
+  // stock: 10,
+  // image: "/assets/img/zócalo.jpg",
+  // categoria: this.category[0],
+
+
 }
 ];
-  
+
   actComprobante(): void{
-    
+
     const replace: any ={
       id: "",
       name: this.d_nombre,
-      description: this.d_descripcionn,
+      //description: this.d_descripcionn,
       price: this.d_Precio,
-      stock: this.d_Stoke,
-      image: "",
-      categoria: this.category[0],
+      // stock: this.d_Stoke,
+      // image: "",
+      // categoria: this.category[0],
     }
     this.products.splice(this.posicionActualizar,1,replace);
     this.d_nombre ="";

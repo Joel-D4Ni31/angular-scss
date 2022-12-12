@@ -6,19 +6,19 @@ import { Product } from '../model/product.model';
   providedIn: 'root'
 })
 export class ShopCartService {
-  
+
 
   carrito: DetailSale[]=[];
   constructor() { }
   addElementCart(product: Product, cantidad:number):void{
     let newElement = this.newElementCart();
     newElement.id="0";
-    newElement.producto = product;
-    newElement.cantidad = cantidad; 
-    newElement.subtotal = cantidad*newElement.producto.price; 
+    // newElement.producto = product;
+    newElement.cantidad = cantidad;
+    // newElement.subtotal = cantidad*newElement.producto.price;
     newElement.price=0;
     this.carrito.push(newElement);
-    
+
   }
   newElementCart(): DetailSale{
 
@@ -27,12 +27,12 @@ export class ShopCartService {
       cantidad: 0,
       price: 0,
       subtotal: 0,
-      producto: {
-        id: "",
-        name: "",
-        description: "",
-        price: 0,
-      },
+      // producto: {
+      //   id: "",
+      //   nombre: "",
+      //   //description: "",
+      //   precio: 0,
+      // },
       // Venta: {
       //   id: "",
       //   costo: 0,
